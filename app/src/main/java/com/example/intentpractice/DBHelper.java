@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -63,14 +64,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
         ArrayList<StudentModel> studentArrayList = new ArrayList<>();
 
+        // moving our cursor to first position.
         if (cursorCourses.moveToFirst()) {
             do {
 
                 studentArrayList.add(new StudentModel(cursorCourses.getString(1),
-                        cursorCourses.getInt(2),
+                        cursorCourses.getString(2),
                         cursorCourses.getInt(3) == 1 ? true : false));
             } while (cursorCourses.moveToNext());
 
+        }
+        for (int i = 0; i < studentArrayList.size(); i++) {
+            Log.d("======", studentArrayList.get(i).getName());
         }
 
         cursorCourses.close();

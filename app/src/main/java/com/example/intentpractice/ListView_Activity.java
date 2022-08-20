@@ -20,23 +20,26 @@ public class ListView_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
-        friendlist.add("Asim");
-        friendlist.add("Ans");
-        friendlist.add("Zain");
-        friendlist.add("Mahad");
-        friendlist.add("Jawad");
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,friendlist);
-        listView = findViewById(R.id.Listview);
-        listView.setAdapter(arrayAdapter);
+//        friendlist.add("Asim");
+//        friendlist.add("Ans");
+//        friendlist.add("Zain");
+//        friendlist.add("Mahad");
+//        friendlist.add("Jawad");
+//        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,friendlist);
+//        listView = findViewById(R.id.Listview);
+//        listView.setAdapter(arrayAdapter);
 
-//        ArrayList<Students> studentArrayList = new ArrayList<Students>();
+        ArrayList<StudentModel> studentArrayList = new ArrayList<StudentModel>();
 //        studentArrayList.add(new Students("Ans", "Alpha", "1", "A", R.drawable.a1));
 //        studentArrayList.add(new Students("Saad", "Beta", "2", "B", R.drawable.a2));
 //        studentArrayList.add(new Students("Aila", "Alpha", "5", "C", R.drawable.a3));
 //        studentArrayList.add(new Students("Aiman", "Beta", "6", "D", R.drawable.a4));
-//        myAdapter adapter = new myAdapter(this, studentArrayList);
-//        ListView listView = findViewById(R.id.Listview);
-//        listView.setAdapter(adapter);
+        studentArrayList.add(new StudentModel("Hassan","bsef19a513",false));
+        studentArrayList.add(new StudentModel("Asim","bsef19a542",true));
+        studentArrayList.add(new StudentModel("Mahnoor","bsef19a502",false));
+        myAdapter adapter = new myAdapter(this, studentArrayList);
+        ListView listView = findViewById(R.id.Listview);
+        listView.setAdapter(adapter);
     }
 
     public void addOnClick(View view) {

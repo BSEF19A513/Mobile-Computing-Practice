@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.db_activity);
     }
 
     public void button1OnClick(View view) {
@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void button2OnClick(View view) {
         Intent intent = new Intent(MainActivity.this,ListView_Activity.class);
+        startActivity(intent);
+    }
+    public void buttonDBOnClick(View view) {
+        Intent intent = new Intent(MainActivity.this,DBActivity.class);
         startActivity(intent);
     }
 

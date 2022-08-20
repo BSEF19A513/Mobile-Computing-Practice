@@ -1,46 +1,46 @@
 package com.example.intentpractice;
 
 public class StudentModel {
-        private String name;
-        private int rollNmber;
-        private boolean isEnroll;
+    private String name;
+    private String rollNmber;
+    private boolean isEnroll;
 
-        @Override
-        public String toString() {
-            return "StudentModel{" +
-                    "name='" + name + '\'' +
-                    ", rollNmber=" + rollNmber +
-                    ", isEnroll=" + isEnroll +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "StudentModel{" +
+                "name='" + name + '\'' +
+                ", rollNmber=" + rollNmber +
+                ", isEnroll=" + isEnroll +
+                '}';
+    }
 
-        public StudentModel(String name, int rollNmber, boolean isEnroll) {
-            this.name = name;
-            this.rollNmber = rollNmber;
-            this.isEnroll = isEnroll;
-        }
+    public StudentModel(String name, String rollNmber, boolean isEnroll) {
+        this.name = name;
+        this.rollNmber = rollNmber;
+        this.isEnroll = isEnroll;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public int getRollNmber() {
-            return rollNmber;
-        }
+    public String getRollNmber() {
+        return rollNmber;
+    }
 
-        public void setRollNmber(int rollNmber) {
-            this.rollNmber = rollNmber;
-        }
+    public void setRollNmber(String rollNmber) {
+        this.rollNmber = rollNmber;
+    }
 
-        public boolean isEnroll() {
-            return isEnroll;
-        }
+    public boolean isEnroll() {
+        return isEnroll;
+    }
 
-        public void setEnroll(boolean enroll) {
-            isEnroll = enroll;
-        }
+    public void setEnroll(boolean enroll) {
+        isEnroll = enroll;
+    }
 }

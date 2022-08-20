@@ -5,9 +5,13 @@
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/drawable/button_default.xml" value="0.221" />
         <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/drawable/custome_button.xml" value="0.221" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/activity_dbactivity.xml" value="0.20878623188405798" />
         <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/activity_list_view.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/activity_main2.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/db_activity.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/db_activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/db_view.xml" value="0.20878623188405798" />
         <entry key="..\:/Users/user/AndroidStudioProjects/IntentPractice/app/src/main/res/layout/listview2.xml" value="0.23645833333333333" />
       </map>
     </option>

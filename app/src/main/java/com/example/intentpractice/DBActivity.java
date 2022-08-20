@@ -11,18 +11,20 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class DBMainActivity extends AppCompatActivity {
+public class DBActivity extends AppCompatActivity {
 
     Button buttonAdd, buttonViewAll;
     EditText editName, editRollNumber;
     Switch switchIsActive;
     ListView listViewStudent;
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dbactivity);
 
         buttonAdd = findViewById(R.id.buttonAdd);
         buttonViewAll = findViewById(R.id.buttonViewAll);
@@ -30,6 +32,7 @@ public class DBMainActivity extends AppCompatActivity {
         editRollNumber = findViewById(R.id.editTextRollNumber);
         switchIsActive = findViewById(R.id.switchStudent);
         listViewStudent = findViewById(R.id.listViewStudent);
+        listView = findViewById(R.id.Listview);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             StudentModel studentModel;
@@ -37,13 +40,13 @@ public class DBMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    studentModel = new StudentModel(editName.getText().toString(), Integer.parseInt(editRollNumber.getText().toString()), switchIsActive.isChecked());
+                    studentModel = new StudentModel(editName.getText().toString(), (editRollNumber.getText().toString()), switchIsActive.isChecked());
                     //Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
                 }
                 catch (Exception e){
-                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DBActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
-                DBHelper dbHelper  = new DBHelper(MainActivity.this);
+                DBHelper dbHelper  = new DBHelper(DBActivity.this);
                 dbHelper.addStudent(studentModel);
             }
         });
@@ -51,12 +54,17 @@ public class DBMainActivity extends AppCompatActivity {
         buttonViewAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBHelper dbHelper = new DBHelper(DBMainActivity.this);
-                List<StudentModel> list = dbHelper.getAllStudents();
-                ArrayAdapter arrayAdapter = new ArrayAdapter<StudentModel>
-                        (DBMainActivity.this, android.R.layout.simple_list_item_1,list);
-                listViewStudent.setAdapter(arrayAdapter);
-
+                DBHelper dbHelper = new DBHelper(DBActivity.this);
+//                ArrayList<StudentModel> list = dbHelper.getAllStudents();
+                ArrayList<StudentModel> studentModelArrayList = new ArrayList<StudentModel>();
+//                ArrayAdapter arrayAdapter = new ArrayAdapter<StudentModel>
+//                        (DBActivity.this, android.R.layout.simple_list_item_1,list);
+//                listViewStudent.setAdapter(arrayAdapter);
+                studentModelArrayList.add(new StudentModel("Hassan","bsef19a513",false));
+                studentModelArrayList.add(new StudentModel("Asim","bsef19a542",true));
+                studentModelArrayList.add(new StudentModel("Mahnoor","bsef19a502",false));
+                myAdapter adapter = new myAdapter(DBActivity.this,studentModelArrayList);
+                listView.setAdapter(adapter);
             }
         });
 
